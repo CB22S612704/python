@@ -1,0 +1,5 @@
+pip install selenium webdriver-manager pandas openpyxl pyotp plyer
+
+pip install selenium webdriver-manager pandas openpyxl pyotp win10toast
+
+pip install plyer
