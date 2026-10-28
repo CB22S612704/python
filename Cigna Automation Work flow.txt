@@ -1,0 +1,172 @@
+link - https://cignaforhcp.cigna.com/app/login
+
+note - incase login page bar opened need to close //*[@id="onetrust-close-btn-container"]/button
+
+Excel Path = "C:\Users\Automation22\Desktop\Automation\Cigna\Cigna.xlsx"
+
+Excel Sheet Name (Input, Master, Login)
+
+#Login Sheet
+1. username
+2. Password
+
+#input sheet
+1. Invoice#
+2. Patient Name (first name, Last Name)# format
+3. DOB
+4. Insurance Name
+5. Cigna ID
+6. DOS
+7. CPT Code
+8. Billed Amount
+9. Notes1
+10. Notes2
+11. CPT
+12. Remark Codes
+13. Status
+
+#Master Sheet
+1. CPT
+2. Remark Codes
+3. Status
+
+#Login Method
+
+Method 1#
+
+1. login Button - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-public/div/main/cigna-page/div/div[1]/div/cigna-login-form-auth0/div/div[2]/button
+
+2. Username - //*[@id="username-label"]
+
+3. next - /html/body/main/section/div/div/div/div[1]/div/form/div[4]/button
+
+4. password - //*[@id="password"]
+
+5. continue - /html/body/main/section/div/div/div/form/div[5]/button
+
+7. get Authentication code get form user as cmd
+
+8. OTP Filed - //*[@id="code"]
+
+9. Remember me - /html/body/main/section/div/div/div/div/div/form/div[3]/label/span
+
+10. Contine Button - /html/body/main/section/div/div/div/div/div/form/div[4]/button
+
+
+Method 2#
+
+one time login 30days valid so session kindly save ones saved as saved session ad cookies next time login use
+
+1. login Button - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-public/div/main/cigna-page/div/div[1]/div/cigna-login-form-auth0/div/div[2]/button
+
+login Session Are there Click Login Button Automatically Logged
+
+#Patient Search Methods
+
+#Type 1. Date of birth/Cigna patient ID
+
+1. Date of birth/Cigna patient ID - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[1]/fieldset/div[1]/div[1]/label/i
+
+2. Date of birth//*[@id="dob"](mm/dd/yyyy)
+
+3. Patient ID//*[@id="memberId"]
+
+4. Search - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[2]/fieldset/div/div[6]/button[1]
+
+
+#Type2. Name/Date of birth
+
+1. Name/Date of birth - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[1]/fieldset/div[1]/div[2]/label/i
+
+2. First name - //*[@id="firstName"]
+
+3. Last name  - //*[@id="lastName"]
+
+4. Date of birth - //*[@id="dob"](mm/dd/yyyy)
+
+5. Search - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[2]/fieldset/div/div[6]/button[1]
+
+#Type3. Name/Cigna patient ID -
+
+1. Name/Cigna patient ID - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[3]/fieldset/div/div[7]/button[1]
+
+2. First name - //*[@id="firstName"]
+
+3. Last name - //*[@id="lastName"]
+
+4. Patient ID - //*[@id="memberId"]
+
+5. Search - //*[@id="results-top"]/div[1]/cigna-search-form/div/cigna-tab-group/div/cigna-search-type-patient/form/div[2]/fieldset/div/div[6]/button[1]
+
+
+#patient Search Method WorkFlow
+
+1. Type 1 Patient Not Found Run Type 2 Patient Not Fount Type 2
+
+
+#After Login
+
+1. claims - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/header/cigna-primary-nav/nav/div[3]/div/cigna-nav-item/a
+2. search claim - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/header/cigna-primary-nav/nav/div[3]/cigna-nav-links/div[1]/cigna-nav-item/a 
+
+#Claims Workflow
+
+1. Dos Compare date of service - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[1]/td[6] , /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[2]/td[6], /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[3]/td[6], /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[4]/td[6]
+
+#Note - Dos Matched Enter the Claim
+
+2. Claim number - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[1]/td[2]/div/a, /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[2]/td[2]/div/a, /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[3]/td[2]/div/a, /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-search-wrapper/cigna-main-screen/cigna-results-table/table/tbody/tr[4]/td[2]/div/a
+
+#Claim Number As Using to Entering Claims
+
+#Store Data In Variable
+
+1. Claim/Reference Number:/html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[1]/table/tbody/tr[1]/td 
+
+2. Date Processed: /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[1]/table/tbody/tr[6]/td
+
+3. Claim amount due - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[2]/table/tbody/tr[1]/td
+
+4. Claim amount paid: - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[2]/table/tbody/tr[2]/td
+
+5. Total provider payment - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[2]/table/tbody/tr[3]/td
+
+6. Patient responsibility: - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[2]/table/tbody/tr[4]/td
+
+7 . Procedure Code - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[1]/td[1], /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[2]/td[1]
+
+8 . Dates Of Service - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[1]/td[2], /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[2]/td[2]
+
+9. Remark Codes - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[1]/td[12], /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[4]/cigna-medical-procedure-details/div/table/tbody/tr[2]/td[12]
+
+10. Explanation of Remark Codes- /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[5]/cigna-medical-explanation-details/div[1]/div[1]/div[1]<(combine)>/html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[5]/cigna-medical-explanation-details/div[1]/div[1]/div[2]/p
+
+another cpt - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[5]/cigna-medical-explanation-details/div[1]/div[2]/div[1]/strong<(combine)> /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/div[5]/cigna-medical-explanation-details/div[1]/div[2]/div[2]/p
+
+
+11. Claim Status: - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-claims-details/div/cigna-claims-details-medical/cigna-medical-claims-information/div/cigna-tab-group/div/div/div/div[1]/table/tbody/tr[7]/td/cigna-claim-status/cigna-status-badge/div/div[2]
+
+
+#Return Claims
+
+1. Return - /html/body/cigna-root/cigna-layout-wrapper/cigna-layout-secure/div/main/div/cigna-page/cigna-claim-details-screen/cigna-breadcrumbs/div/div[1]/a 
+
+#Notes1 Conditions
+
+1. Paid Notes
+
+DOS (Excel DOS Incase Dos Not In Excel use Date of Service) CLM PD (Amount) THRU CHK #(Claims Number) ISSUED ON (Date Processed). CPT (CPTS) PAID (remark Code) "197 - in this part In Master Sheet Already CPT are there use A Status Colum's use in this "<> part Not Found CPT in Status Colum's use CPT Code last 
+
+
+2. Denied notes(All Amounts Are Zero Called Denied)
+
+DOS (Excel DOS Incase Dos Not In Excel use Date of Service) CLM PD (Amount) THRU CHK #(Claims Number) ISSUED ON (Date Processed). CPT (CPTS) DND (remark Code) "197 - in this part In Master Sheet Already CPT are there use A Status Colum's use in this "<> part Not Found CPT in Status Colum's use CPT Code last 
+
+#CPT Compare Conation (Procedure Code)
+
+1. First Claim Are funded CPT  place place Notes1 
+
+2. not Found CPT in First Claim use next Claims last Two Claims date get based on notes1 type method use not Grenade Notes tow there no CPT in the excel use this Condition 
+
+#master Sheet Already CPT Exist no need Add already data are three Add In Empty Row
+#username And Password No Space in Input Fields
